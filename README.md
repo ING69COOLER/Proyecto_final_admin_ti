@@ -26,8 +26,9 @@ proyecto-final/
 ├── diagrama.mmd         # Diagrama de arquitectura (Mermaid)
 ├── documentacion.md     # Documentación técnica: instalación, verificación, solución de problemas
 ├── GUIA-MONTAJE.md      # Guía secuencial de montaje con puntos de captura
+├── EVIDENCIAS.md        # Galería de capturas de todos los servicios funcionando
 ├── README.md            # Este archivo
-├── capturas/            # Screenshots de los servicios funcionando
+├── capturas/            # Screenshots (fase1..fase6 + nombres descriptivos)
 └── codigo/              # Configuraciones y scripts propios
     ├── 01-netcfg.yaml   # IP fija (Netplan)
     ├── ntp.conf         # Servidor NTP
@@ -64,15 +65,17 @@ proyecto-final/
 
 | # | Servicio | Puerto | Tema | Estado |
 |---|----------|--------|------|--------|
-| 1 | NTP | 123 | Linux | ☐ |
-| 2 | NFS | 2049 | Linux | ☐ |
-| 3 | NIS | 111 | Linux | ☐ |
-| 4 | CUPS | 631 | Linux | ☐ |
-| 5 | Samba | 445 | Linux | ☐ |
-| 6 | App EPA + PostgreSQL (contenedores) | 8080 | Podman | ☐ |
-| 7 | Portal EPA + SSL + BD | 80/443 | Dokploy | ☐ |
+| 1 | NTP | 123 | Linux | ✅ |
+| 2 | NFS | 2049 | Linux | ✅ |
+| 3 | NIS | 111 | Linux | ✅ |
+| 4 | CUPS | 631 | Linux | ✅ |
+| 5 | Samba | 445 | Linux | ✅ |
+| 6 | App EPA + PostgreSQL (contenedores) | 8080 | Podman | ✅ |
+| 7 | Portal EPA + BD | 80/443 | Dokploy | ✅ |
 
-> Las VMs corren sobre **Multipass**. Marca cada casilla al verificar con `codigo/verificar.sh`.
+> Las VMs corren sobre **Multipass**. Todos los servicios fueron implementados y
+> verificados; las evidencias gráficas están en **[EVIDENCIAS.md](EVIDENCIAS.md)** y
+> embebidas en [documentacion.md](documentacion.md).
 
 ## Puesta en marcha rápida
 

@@ -4,9 +4,9 @@ echo "== Verificación de servicios EPA =="
 
 check() { systemctl is-active --quiet "$1" && echo "[OK]   $2 activo" || echo "[FALLA] $2 inactivo"; }
 
-check ntp                "NTP"
+check ntpsec             "NTP (ntpsec)"
 check nfs-kernel-server  "NFS"
-check nis                "NIS"
+check ypserv             "NIS (ypserv)"
 check cups               "CUPS"
 check smbd               "Samba (smbd)"
 

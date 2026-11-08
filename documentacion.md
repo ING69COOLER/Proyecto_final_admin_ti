@@ -69,7 +69,9 @@ sudo apt update && sudo apt upgrade -y
 ```
 
 **Verificación:** `ip a` muestra `192.168.101.100`; `hostname` muestra `srv-epa`.
-**Captura:** `capturas/00-red-hostname.png`
+**Evidencia:**
+
+![IP fija 192.168.101.100 y hostname srv-epa](capturas/03-red-hostname.png)
 
 ### 0.4 Cliente para las pruebas (NFS, NIS, Samba)
 
@@ -126,7 +128,9 @@ sudo ntpdate 192.168.101.100
 timedatectl   # "System clock synchronized: yes"
 ```
 
-**Captura:** `capturas/01-ntp-ntpq.png` (salida de `ntpq -p`)
+**Evidencia:**
+
+![Salida de ntpq -p con el peer seleccionado](capturas/04-ntp-ntpq.png)
 
 ### Solución de problemas
 
@@ -174,7 +178,9 @@ df -h | grep epa
 echo "prueba" | sudo tee /mnt/epa/test.txt   # debe escribirse y verse en el servidor
 ```
 
-**Captura:** `capturas/02-nfs-montado.png` (salida de `df -h` en el cliente)
+**Evidencia:**
+
+![NFS montado en cli-epa](capturas/05-nfs-montado.png)
 
 ### Solución de problemas
 
@@ -234,7 +240,11 @@ ypcat passwd            # lista los usuarios NIS (incluye epaadmin)
 getent passwd epaadmin  # el usuario NIS aparece en el cliente (prueba de auth centralizada)
 ```
 
-**Captura:** `capturas/03-nis-ypcat.png` (salida de `ypcat passwd`)
+**Evidencia:** servidor y cliente.
+
+![NIS en el servidor](capturas/06-nis-servidor.png)
+
+![NIS en el cliente: ypwhich y getent epaadmin](capturas/07-nis-cliente.png)
 
 ### Solución de problemas
 
@@ -280,7 +290,9 @@ echo "Factura de prueba EPA" | lp -d PDF   # encola un trabajo
 lpstat -o               # muestra la cola de impresión
 ```
 
-**Captura:** `capturas/04-cups-web.png` (panel web 631 con la impresora listada)
+**Evidencia:**
+
+![Panel web de CUPS en el puerto 631](capturas/08-cups-web.png)
 
 ### Solución de problemas
 
@@ -321,7 +333,9 @@ smbclient //192.168.101.100/epa -U epauser   # entra al recurso
 # Desde Mac: Finder → Cmd+K → smb://192.168.101.100/epa
 ```
 
-**Captura:** `capturas/05-samba-windows.png` (carpeta abierta desde Windows/Mac)
+**Evidencia:**
+
+![Recurso Samba epa accesible](capturas/09-samba.png)
 
 ### Solución de problemas
 
@@ -379,8 +393,11 @@ curl http://192.168.101.100:8080/api/estado-bd   # {"bd":"conectada",...}
 podman-compose logs -f app                 # logs de la app
 ```
 
-**Captura:** `capturas/06-podman-ps.png` (salida de `podman ps`) · `capturas/07-podman-app.png`
-(navegador en `:8080` + `/health`)
+**Evidencia:**
+
+![podman ps, volumen y red](capturas/10-podman-ps.png)
+
+![App EPA en :8080 con la base de datos conectada](capturas/12-podman-app-bd.png)
 
 ### Solución de problemas
 
@@ -427,7 +444,13 @@ curl -I https://epa-armenia.duckdns.org      # HTTP/2 200 y certificado válido
 docker ps                                     # contenedores de la app y la DB corriendo
 ```
 
-**Captura:** `capturas/08-web-https.png` (sitio con candado HTTPS) · `capturas/09-dokploy-panel.png`
+**Evidencia:**
+
+![Portal EPA publicado](capturas/15-portal-web.png)
+
+![Panel de Dokploy con la app y la base de datos](capturas/14-dokploy-panel.png)
+
+![/api/estado-bd confirma la conexión a PostgreSQL](capturas/17-web-estado-bd.png)
 
 ### Solución de problemas
 
