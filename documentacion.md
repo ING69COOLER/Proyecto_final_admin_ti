@@ -71,7 +71,7 @@ sudo apt update && sudo apt upgrade -y
 **Verificación:** `ip a` muestra `192.168.101.100`; `hostname` muestra `srv-epa`.
 **Evidencia:**
 
-![IP fija 192.168.101.100 y hostname srv-epa](capturas/03-red-hostname.png)
+![IP fija 192.168.101.100 y hostname srv-epa](capturas/fase1/3-ip-hostname.png)
 
 ### 0.4 Cliente para las pruebas (NFS, NIS, Samba)
 
@@ -130,7 +130,7 @@ timedatectl   # "System clock synchronized: yes"
 
 **Evidencia:**
 
-![Salida de ntpq -p con el peer seleccionado](capturas/04-ntp-ntpq.png)
+![Salida de ntpq -p con el peer seleccionado](capturas/fase2/1-ntp-ntpq.png)
 
 ### Solución de problemas
 
@@ -180,7 +180,7 @@ echo "prueba" | sudo tee /mnt/epa/test.txt   # debe escribirse y verse en el ser
 
 **Evidencia:**
 
-![NFS montado en cli-epa](capturas/05-nfs-montado.png)
+![NFS montado en cli-epa](capturas/fase3/1-nfs-cliente.png)
 
 ### Solución de problemas
 
@@ -242,9 +242,9 @@ getent passwd epaadmin  # el usuario NIS aparece en el cliente (prueba de auth c
 
 **Evidencia:** servidor y cliente.
 
-![NIS en el servidor](capturas/06-nis-servidor.png)
+![NIS en el servidor](capturas/fase2/2-nis-servidor.png)
 
-![NIS en el cliente: ypwhich y getent epaadmin](capturas/07-nis-cliente.png)
+![NIS en el cliente: ypwhich y getent epaadmin](capturas/fase3/2-nis-cliente.png)
 
 ### Solución de problemas
 
@@ -292,7 +292,7 @@ lpstat -o               # muestra la cola de impresión
 
 **Evidencia:**
 
-![Panel web de CUPS en el puerto 631](capturas/08-cups-web.png)
+![Panel web de CUPS en el puerto 631](capturas/fase2/3-cups-web.png)
 
 ### Solución de problemas
 
@@ -335,7 +335,7 @@ smbclient //192.168.101.100/epa -U epauser   # entra al recurso
 
 **Evidencia:**
 
-![Recurso Samba epa accesible](capturas/09-samba.png)
+![Recurso Samba epa accesible](capturas/fase2/4-samba.png)
 
 ### Solución de problemas
 
@@ -395,9 +395,9 @@ podman-compose logs -f app                 # logs de la app
 
 **Evidencia:**
 
-![podman ps, volumen y red](capturas/10-podman-ps.png)
+![podman ps, volumen y red](capturas/fase4/1-podman-ps.png)
 
-![App EPA en :8080 con la base de datos conectada](capturas/12-podman-app-bd.png)
+![App EPA en :8080 con la base de datos conectada](capturas/fase4/3-podman-app-bd.png)
 
 ### Solución de problemas
 
@@ -446,11 +446,11 @@ docker ps                                     # contenedores de la app y la DB c
 
 **Evidencia:**
 
-![Portal EPA publicado](capturas/15-portal-web.png)
+![Portal EPA publicado](capturas/fase5/5-portal-web.png)
 
-![Panel de Dokploy con la app y la base de datos](capturas/14-dokploy-panel.png)
+![Panel de Dokploy con la app y la base de datos](capturas/fase5/4-dokploy-panel.png)
 
-![/api/estado-bd confirma la conexión a PostgreSQL](capturas/17-web-estado-bd.png)
+![/api/estado-bd confirma la conexión a PostgreSQL](capturas/fase5/7-web-estado-bd.png)
 
 ### Solución de problemas
 

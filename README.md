@@ -65,13 +65,13 @@ proyecto-final/
 
 | # | Servicio | Puerto | Tema | Estado |
 |---|----------|--------|------|--------|
-| 1 | NTP | 123 | Linux | ✅ |
-| 2 | NFS | 2049 | Linux | ✅ |
-| 3 | NIS | 111 | Linux | ✅ |
-| 4 | CUPS | 631 | Linux | ✅ |
-| 5 | Samba | 445 | Linux | ✅ |
-| 6 | App EPA + PostgreSQL (contenedores) | 8080 | Podman | ✅ |
-| 7 | Portal EPA + BD | 80/443 | Dokploy | ✅ |
+| 1 | NTP | 123 | Linux | Sí |
+| 2 | NFS | 2049 | Linux | Sí |
+| 3 | NIS | 111 | Linux | Sí |
+| 4 | CUPS | 631 | Linux | Sí |
+| 5 | Samba | 445 | Linux | Sí |
+| 6 | App EPA + PostgreSQL (contenedores) | 8080 | Podman | Sí |
+| 7 | Portal EPA + BD | 80/443 | Dokploy | Sí |
 
 > Las VMs corren sobre **Multipass**. Todos los servicios fueron implementados y
 > verificados; las evidencias gráficas están en **[EVIDENCIAS.md](EVIDENCIAS.md)** y
