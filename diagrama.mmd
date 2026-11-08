@@ -1,0 +1,44 @@
+%% Diagrama de Arquitectura — Infraestructura de TI de EPA E.S.P.
+%% Universidad del Quindío — Administración de Infraestructura de TI
+%% Estudiante: Manuel Pineda Varela — Docente: Maycol Cárdenas Acevedo
+%% Integración de Multipass (virtualización), Podman (contenedores) y Dokploy (PaaS)
+graph LR
+    A[Red Local<br/>192.168.1.0/24] --> MP
+
+    subgraph MP[Multipass - Hipervisor]
+      direction LR
+      F[VM srv-epa<br/>192.168.1.100]
+      CLI[VM cli-epa<br/>cliente de pruebas]
+    end
+
+    %% Servicios Linux nativos en el servidor
+    F --> G[NTP :123]
+    F --> H[NFS :2049]
+    F --> I[NIS :111]
+    F --> J[CUPS :631]
+    F --> K[Samba :445]
+
+    G --> G1[Clientes sincronizan hora]
+    H --> L[cli-epa monta /srv/nfs/epa]
+    I --> N[Autenticacion epa.local]
+    J --> O[Impresora compartida]
+    K --> M[Clientes Windows/Mac]
+
+    %% Capa de contenedores Podman (dev/intranet)
+    F --> POD
+    subgraph POD[Podman - podman-compose]
+      direction LR
+      APP[epa-app :8080<br/>Node.js/Express]
+      DB[(PostgreSQL<br/>vol epa-datos)]
+      APP --> DB
+    end
+
+    %% Capa PaaS Dokploy (produccion publica)
+    F --> DK
+    subgraph DK[Dokploy - Traefik :443]
+      direction LR
+      WEB[Portal EPA<br/>HTTPS Let's Encrypt]
+      PGP[(PostgreSQL<br/>administrada)]
+      WEB --> PGP
+    end
+    DK --> INET[Internet<br/>epa-armenia.duckdns.org]

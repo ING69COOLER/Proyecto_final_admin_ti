@@ -1,0 +1,9 @@
+# /etc/netplan/99-static.yaml — IP fija del servidor EPA (Multipass, NIC bridged eth1)
+# eth1 es la interfaz bridged de esta VM (confírmalo con `ip a`).
+# Solo fija la IP de LAN en eth1; eth0 (NAT de Multipass) mantiene la salida a internet.
+network:
+  version: 2
+  ethernets:
+    eth1:
+      dhcp4: no
+      addresses: [192.168.101.100/24]

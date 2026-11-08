@@ -1,0 +1,9 @@
+# /etc/netplan/99-static.yaml — IP fija del CLIENTE EPA (cli-epa, NIC bridged eth1)
+# Pone al cliente en la misma red LAN que el servidor para NFS/NIS/Samba.
+# eth0 (NAT de Multipass) mantiene la salida a internet.
+network:
+  version: 2
+  ethernets:
+    eth1:
+      dhcp4: no
+      addresses: [192.168.101.101/24]

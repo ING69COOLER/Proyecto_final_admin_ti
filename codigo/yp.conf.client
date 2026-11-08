@@ -1,0 +1,3 @@
+# /etc/yp.conf en los CLIENTES NIS
+# Se usa la IP del servidor en la red privada de Multipass (VM↔VM no funciona por bridged).
+domain epa.local server 10.207.235.83

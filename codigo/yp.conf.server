@@ -1,0 +1,3 @@
+# /etc/yp.conf en el SERVIDOR NIS (srv-epa)
+ypserver 127.0.0.1
+domain epa.local server 127.0.0.1

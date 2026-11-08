@@ -1,0 +1,45 @@
+# podman-compose.yml — Entorno interno/dev de EPA con Podman
+# Levanta el portal EPA + PostgreSQL como contenedores (demuestra imágenes,
+# volúmenes, redes y orquestación multi-contenedor con Podman Compose).
+#
+# Uso:
+#   cd codigo
+#   podman-compose up -d        # levantar
+#   podman-compose ps           # ver estado
+#   podman-compose logs -f app  # ver logs
+#   podman-compose down         # detener
+version: "3"
+
+services:
+  app:
+    build: ./sitio-web            # usa sitio-web/Containerfile
+    container_name: epa-app
+    ports:
+      - "8080:3000"               # acceso en http://<ip-servidor>:8080
+    environment:
+      PORT: "3000"
+      DATABASE_URL: "postgresql://epa:epa_clave_dev@db:5432/epa"
+    depends_on:
+      - db
+    networks:
+      - epa-net
+    restart: unless-stopped
+
+  db:
+    image: docker.io/library/postgres:16-alpine
+    container_name: epa-db
+    environment:
+      POSTGRES_USER: epa
+      POSTGRES_PASSWORD: epa_clave_dev
+      POSTGRES_DB: epa
+    volumes:
+      - epa-datos:/var/lib/postgresql/data   # persistencia
+    networks:
+      - epa-net
+    restart: unless-stopped
+
+networks:
+  epa-net:
+
+volumes:
+  epa-datos:

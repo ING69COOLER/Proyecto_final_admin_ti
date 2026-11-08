@@ -1,0 +1,17 @@
+{
+  "name": "epa-portal",
+  "version": "1.0.0",
+  "description": "Portal institucional EPA E.S.P. - Proyecto Final Admin. de Infraestructura de TI",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+# /etc/exports — NFS EPA
+# Repositorio de planos y actas compartido.
+# Se autoriza la LAN (bridged) y la red privada entre VMs de Multipass,
+# porque en modo bridged dos VMs no se comunican entre sí; el cliente monta por la privada.
+/srv/nfs/epa    192.168.101.0/24(rw,sync,no_subtree_check,root_squash)
+/srv/nfs/epa    10.207.235.0/24(rw,sync,no_subtree_check,root_squash)

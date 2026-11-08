@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EPA E.S.P. — Empresas Públicas de Armenia</title>
+  <style>
+    :root { --azul:#0a4d8c; --verde:#1b8a5a; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:system-ui,sans-serif; color:#222; line-height:1.6; }
+    header { background:var(--azul); color:#fff; padding:2rem 1rem; text-align:center; }
+    header h1 { font-size:1.8rem; }
+    nav { background:var(--verde); display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; padding:.8rem; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; }
+    main { max-width:900px; margin:0 auto; padding:2rem 1rem; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1.5rem; }
+    .card { border:1px solid #ddd; border-radius:10px; padding:1.2rem; }
+    .card h3 { color:var(--azul); margin-bottom:.4rem; }
+    footer { background:#f1f1f1; text-align:center; padding:1.2rem; color:#555; font-size:.9rem; margin-top:2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Empresas Públicas de Armenia — EPA E.S.P.</h1>
+    <p>Acueducto · Alcantarillado · Aseo</p>
+  </header>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#pqrs">PQRS</a>
+    <a href="#tarifas">Tarifas</a>
+    <a href="#transparencia">Transparencia</a>
+  </nav>
+  <main>
+    <section id="servicios">
+      <h2>Nuestros servicios</h2>
+      <div class="cards">
+        <div class="card"><h3>Acueducto</h3><p>Suministro de agua potable para Armenia.</p></div>
+        <div class="card"><h3>Alcantarillado</h3><p>Recolección y tratamiento de aguas residuales.</p></div>
+        <div class="card"><h3>Aseo</h3><p>Recolección de residuos y limpieza urbana.</p></div>
+      </div>
+    </section>
+    <section id="pqrs" style="margin-top:2rem">
+      <h2>PQRS</h2>
+      <p>Radica tus peticiones, quejas, reclamos y sugerencias en línea.</p>
+    </section>
+    <section id="transparencia" style="margin-top:2rem">
+      <h2>Transparencia</h2>
+      <p>Información pública conforme a la Ley 1712 de 2014.</p>
+    </section>
+  </main>
+  <footer>
+    Sitio de demostración — Proyecto Final Administración de Infraestructura de TI ·
+    Universidad del Quindío · Manuel Pineda Varela
+  </footer>
+</body>
+</html>
