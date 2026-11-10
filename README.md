@@ -8,6 +8,9 @@
 **Empresa objeto de estudio:** Empresas Públicas de Armenia E.S.P. (EPA)
 **Fecha de entrega:** 8 de noviembre de 2026
 
+**Integrantes:**
+Santiago Solarte Trujillo
+
 ---
 
 El presente repositorio contiene la implementación de los servicios de infraestructura de
