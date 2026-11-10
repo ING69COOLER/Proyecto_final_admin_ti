@@ -7,7 +7,7 @@
 **Empresa objeto de estudio:** Empresas Públicas de Armenia E.S.P. (EPA)\
 **Fecha de entrega:** 8 de noviembre de 2026
 
-**Integrantes:**
+**Integrantes:**\
 Santiago Solarte Trujillo\
 Manuel Pineda Varela
 
