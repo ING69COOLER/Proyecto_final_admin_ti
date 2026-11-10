@@ -1,15 +1,15 @@
 # Proyecto Final — Infraestructura de TI para EPA E.S.P.
 
-**Universidad del Quindío** — Facultad de Ingeniería de Sistemas y Computación
-**Programa:** Ingeniería de Sistemas y Computación
-**Curso:** Administración de Infraestructura de TI
-**Docente:** Maycol Cárdenas Acevedo
-**Estudiante:** Manuel Pineda Varela
-**Empresa objeto de estudio:** Empresas Públicas de Armenia E.S.P. (EPA)
+**Universidad del Quindío** — Facultad de Ingeniería de Sistemas y Computación\
+**Programa:** Ingeniería de Sistemas y Computación\
+**Curso:** Administración de Infraestructura de TI\
+**Docente:** Maycol Cárdenas Acevedo\
+**Empresa objeto de estudio:** Empresas Públicas de Armenia E.S.P. (EPA)\
 **Fecha de entrega:** 8 de noviembre de 2026
 
 **Integrantes:**
-Santiago Solarte Trujillo
+Santiago Solarte Trujillo\
+Manuel Pineda Varela
 
 ---
 
