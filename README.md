@@ -9,7 +9,8 @@
 
 **Integrantes:**\
 Santiago Solarte Trujillo\
-Manuel Pineda Varela
+Manuel Pineda Varela\
+Stefania Herrera Ochoa
 
 ---
 
