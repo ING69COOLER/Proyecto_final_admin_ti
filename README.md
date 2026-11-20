@@ -8,7 +8,7 @@
 **Fecha de entrega:** 8 de noviembre de 2026
 
 **Integrantes:**\
-Carlos Alonso Barahona Alvarez
+Carlos Alonso Barahona Alvarez\
 Santiago Solarte Trujillo\
 Manuel Pineda Varela\
 Stefania Herrera Ochoa
